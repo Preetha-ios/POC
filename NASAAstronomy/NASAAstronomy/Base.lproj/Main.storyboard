@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cv2-0g-DFL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Astronomical Gallery-->
+        <scene sceneID="BIg-pn-JyX">
+            <objects>
+                <collectionViewController storyboardIdentifier="PictureCollectionViewController" id="uxH-YI-Ip7" customClass="PictureCollectionViewController" customModule="NASAAstronomy" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gH6-zp-dez">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" sectionInsetReference="safeArea" id="tGe-eH-ZV2">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pictureCell" id="5cF-ZQ-Nro" customClass="PictureCollectionViewCell" customModule="NASAAstronomy" customModuleProvider="target">
+                                <rect key="frame" x="107" y="50" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kPQ-kM-5pL">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TkX-hS-fsN">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="165"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hz-Nx-iKl">
+                                            <rect key="frame" x="0.0" y="165" width="200" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="6zw-4p-gzl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="TkX-hS-fsN" secondAttribute="trailing" id="Iot-ao-1mD"/>
+                                        <constraint firstItem="8hz-Nx-iKl" firstAttribute="leading" secondItem="kPQ-kM-5pL" secondAttribute="leading" id="JvM-Iq-Ve4"/>
+                                        <constraint firstItem="TkX-hS-fsN" firstAttribute="top" secondItem="kPQ-kM-5pL" secondAttribute="top" id="M4w-J9-fru"/>
+                                        <constraint firstAttribute="trailing" secondItem="8hz-Nx-iKl" secondAttribute="trailing" id="QJL-3I-a1l"/>
+                                        <constraint firstItem="TkX-hS-fsN" firstAttribute="leading" secondItem="kPQ-kM-5pL" secondAttribute="leading" id="S2q-DQ-NuZ"/>
+                                        <constraint firstItem="8hz-Nx-iKl" firstAttribute="top" secondItem="TkX-hS-fsN" secondAttribute="bottom" id="d4K-7o-H6U"/>
+                                        <constraint firstAttribute="bottom" secondItem="8hz-Nx-iKl" secondAttribute="bottom" id="ofv-ow-S5f"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="imageView" destination="TkX-hS-fsN" id="SUE-IJ-tNg"/>
+                                    <outlet property="pictureTitleLabel" destination="8hz-Nx-iKl" id="FzG-Sf-6lv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PhotoHeaderView" id="aFH-DN-fbo" customClass="PhotoHeaderView" customModule="NASAAstronomy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNl-Rv-q4u">
+                                    <rect key="frame" x="10" y="0.0" width="202" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Start Date">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="startButtonTapped:" destination="aFH-DN-fbo" eventType="touchUpInside" id="roe-KY-FuN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-nJ-kog">
+                                    <rect key="frame" x="222" y="0.0" width="182" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="End Date">
+                                        <color key="titleColor" systemColor="labelColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="endButtonTapped:" destination="aFH-DN-fbo" eventType="touchUpInside" id="a8o-dP-9Dh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="qQB-nJ-kog" firstAttribute="leading" secondItem="lNl-Rv-q4u" secondAttribute="trailing" constant="10" id="5Mw-D9-u6W"/>
+                                <constraint firstAttribute="bottom" secondItem="qQB-nJ-kog" secondAttribute="bottom" id="Ep3-OL-jkC"/>
+                                <constraint firstItem="lNl-Rv-q4u" firstAttribute="leading" secondItem="aFH-DN-fbo" secondAttribute="leading" constant="10" id="JYT-qZ-nmk"/>
+                                <constraint firstAttribute="trailing" secondItem="qQB-nJ-kog" secondAttribute="trailing" constant="10" id="Svp-1P-zOu"/>
+                                <constraint firstItem="lNl-Rv-q4u" firstAttribute="width" secondItem="qQB-nJ-kog" secondAttribute="width" multiplier="1.10714" id="XJ6-fX-ZMV"/>
+                                <constraint firstItem="qQB-nJ-kog" firstAttribute="top" secondItem="aFH-DN-fbo" secondAttribute="top" id="Xx4-5U-cbx"/>
+                                <constraint firstAttribute="bottom" secondItem="lNl-Rv-q4u" secondAttribute="bottom" id="ZxA-Ho-Vyf"/>
+                                <constraint firstItem="lNl-Rv-q4u" firstAttribute="top" secondItem="aFH-DN-fbo" secondAttribute="top" id="gdP-OF-WXa"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="endButton" destination="qQB-nJ-kog" id="gN1-Fe-tkn"/>
+                                <outlet property="startButton" destination="lNl-Rv-q4u" id="1bP-ZV-FkL"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="uxH-YI-Ip7" id="ISY-8s-qiX"/>
+                            <outlet property="delegate" destination="uxH-YI-Ip7" id="y24-Aa-b65"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Astronomical Gallery" id="Wss-Xm-VkV"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqy-Bt-lSu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313.04347826086956" y="86.383928571428569"/>
+        </scene>
+        <!--Full Picture-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="FullPictureViewController" id="BYZ-38-t0r" userLabel="Full Picture" customClass="FullPictureViewController" customModule="NASAAstronomy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UOh-Aq-pNb">
+                                <rect key="frame" x="20" y="94" width="374" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="xRW-wT-pxo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bX-vs-G1D" userLabel="Date Text">
+                                <rect key="frame" x="20" y="374" width="273.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22-09-2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-L2-RYG" userLabel="Date Value">
+                                <rect key="frame" x="298.5" y="374" width="95.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVq-h9-kBN" userLabel="Explanation ">
+                                <rect key="frame" x="20" y="405" width="374" height="437"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UOh-Aq-pNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0KW-ox-aqb"/>
+                            <constraint firstItem="TVq-h9-kBN" firstAttribute="top" secondItem="5bX-vs-G1D" secondAttribute="bottom" constant="10" id="5KG-bv-jJ5"/>
+                            <constraint firstItem="5bX-vs-G1D" firstAttribute="top" secondItem="UOh-Aq-pNb" secondAttribute="bottom" constant="30" id="C9G-9R-9CM"/>
+                            <constraint firstItem="TVq-h9-kBN" firstAttribute="trailing" secondItem="hpd-L2-RYG" secondAttribute="trailing" id="FX2-Vj-sFC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpd-L2-RYG" secondAttribute="trailing" constant="20" id="JX1-bV-W2X"/>
+                            <constraint firstItem="hpd-L2-RYG" firstAttribute="leading" secondItem="5bX-vs-G1D" secondAttribute="trailing" constant="5" id="KkF-W0-UjS"/>
+                            <constraint firstItem="hpd-L2-RYG" firstAttribute="bottom" secondItem="5bX-vs-G1D" secondAttribute="bottom" id="Kqx-ci-ur7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOh-Aq-pNb" secondAttribute="trailing" constant="20" id="cuT-lN-Nti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TVq-h9-kBN" secondAttribute="bottom" constant="20" id="f00-y1-hIu"/>
+                            <constraint firstItem="UOh-Aq-pNb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="hbL-BI-sdl"/>
+                            <constraint firstItem="hpd-L2-RYG" firstAttribute="top" secondItem="5bX-vs-G1D" secondAttribute="top" id="kqt-FN-9da"/>
+                            <constraint firstItem="5bX-vs-G1D" firstAttribute="leading" secondItem="UOh-Aq-pNb" secondAttribute="leading" id="lgS-IP-KQq"/>
+                            <constraint firstItem="TVq-h9-kBN" firstAttribute="leading" secondItem="5bX-vs-G1D" secondAttribute="leading" id="n5F-K0-0FX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pic of the Day" id="ZSn-so-e0V"/>
+                    <connections>
+                        <outlet property="datePicTaken" destination="hpd-L2-RYG" id="00X-CY-kTK"/>
+                        <outlet property="explanationLabel" destination="TVq-h9-kBN" id="QuQ-l3-AmO"/>
+                        <outlet property="imageView" destination="UOh-Aq-pNb" id="y35-Yk-WbZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137.68115942029" y="85.714285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hL3-A6-i35">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cv2-0g-DFL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zIm-xn-vn9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uxH-YI-Ip7" kind="relationship" relationship="rootViewController" id="gSL-49-mRt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7XI-Lr-emd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597.10144927536237" y="86.383928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
